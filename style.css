@@ -1,7 +1,114 @@
-.logo-image{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-top: -6px;
+*::before, *::after {
+  box-sizing: border-box;
+  font-family: Roboto, Arial, Arial, Helvetica, sans-serif;
+}
+
+body{
+  margin: 0;
+}
+
+.video-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 3rem 1rem;
+  padding: 3rem 0;
+  margin: 0 1.5rem;
+  border-top: 4px solid #ccc;
+}
+
+.video-section:first-child{
+  border-top: none;
+}
+.video-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.thumbnail{
+  position: relative;
+  display: flex;
+}
+
+.thumbnail::before{
+  content: attr(data-duration);
+  position:absolute;
+  background-color: rgba(0, 0, 0, .85);
+  color: white;
+  right: 5px;
+  bottom: 5px;
+  padding: .1em .3em;
+  border-radius: .3em;
+  font-size: .9rem;
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  min-width: 250px;
+  min-height: 150px;
+  /* background-color: #AAA; */
+}
+
+.video-bottom-section {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+.channel-icon{
+  margin-right: .75rem;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  /* background-color: #AAA; */
+}
+
+.video-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: .5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.video-channel-name {
+  margin-bottom: .1rem;
+  text-decoration: none;
+  color: #555;
+  transition: color 150ms;
+}
+
+.video-channel-name:hover{
+  color: #111;
+}
+
+.video-channel-name,
+.video-metadata {
+  color: #555;
+}
+
+.video-section-title {
+  grid-column: 1 / -1;
+  margin: -.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .5rem;
+}
+
+.video-section-title-close {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.videos {
+ background-color: #f9f9f9;
 }
